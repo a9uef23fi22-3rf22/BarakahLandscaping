@@ -449,14 +449,15 @@
         </div>
       </div>
 
-      <div class="quote-form" id="about" style="flex: 1; min-width: 300px; max-width: 600px;">
+    <div class="quote-form" id="about" style="flex: 1; min-width: 300px; max-width: 600px;">
         <h2 style="text-align: center;">Request A Quote</h2>
-        <form>
-          <input type="text" placeholder="Name" required>
-          <input type="email" placeholder="Email Address" required>
-          <input type="text" placeholder="Address">
-          <input type="text" placeholder="Phone Number">
-          <select required>
+        <form action="https://formspree.io/f/manoowkn" method="POST" enctype="multipart/form-data">
+          <input type="text" name="name" placeholder="Name" required>
+          <input type="email" name="email" placeholder="Email Address" required>
+          <input type="text" name="address" placeholder="Address">
+          <input type="text" name="phone" placeholder="Phone Number">
+      
+          <select name="project-type" required>
             <option value="">Type Of Project</option>
             <option value="Clean Cut Trees">Clean Cut Trees</option>
             <option value="Grass Cutting / Lawn Mowing">Grass Cutting / Lawn Mowing</option>
@@ -466,15 +467,20 @@
             <option value="Leaf Raking / Collection">Leaf Raking / Collection</option>
             <option value="General Garden Clean-Up">General Garden Clean-Up</option>
           </select>
-          <select required>
+      
+          <select name="budget" required>
             <option value="">Select Your Budget</option>
             <option value="<$500">&lt; $500</option>
             <option value="$500-$2000">$500 - $2000</option>
             <option value=">$2000">&gt; $2000</option>
           </select>
-          <input type="date" required>
-          <textarea placeholder="Tell us about your project..."></textarea>
-          <input type="file">
+      
+          <input type="date" name="preferred-date" required>
+          <textarea name="message" placeholder="Tell us about your project..."></textarea>          
+          <!-- Optional hidden fields -->
+          <input type="hidden" name="_subject" value="New Quote Request from Website!">
+          <input type="hidden" name="_redirect" value="https://yourdomain.com/thank-you.html">
+      
           <button type="submit">Send Message</button>
         </form>
       </div>
