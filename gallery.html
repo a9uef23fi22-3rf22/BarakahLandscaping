@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery - Barakah Landscaping</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f8f4;
+      color: #333;
+    }
+
+    header.top-bar {
+      background-color: #688346;
+      color: white;
+      padding: 1rem 2rem;
+    }
+
+    .top-bar .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .logo img {
+      height: 40px;
+      width: auto;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .gallery-container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .gallery-container h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+      object-fit: cover;
+      height: 200px;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    footer {
+      background: #2E7D32;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top-bar">
+    <div class="container">
+      <div class="logo">
+        <img src="landscaping.png" alt="Barakah Landscaping Logo">
+        <span>Barakah Landscaping</span>
+      </div>
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="quote.html">Request A Quote</a>
+        <a href="services.html">Services</a>
+        <a href="service-areas.html">Service Areas</a>
+        <a href="contact-us.html">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="gallery-container">
+    <h1>Our Work in Photos</h1>
+    <div class="gallery-grid">
+      <img src="https://source.unsplash.com/800x600/?landscaping,lawn" alt="Landscaping Photo 1">
+      <img src="https://source.unsplash.com/800x600/?garden,trees" alt="Landscaping Photo 2">
+      <img src="https://source.unsplash.com/800x600/?lawn,cutting" alt="Landscaping Photo 3">
+      <img src="https://source.unsplash.com/800x600/?yard,cleanup" alt="Landscaping Photo 4">
+      <img src="https://source.unsplash.com/800x600/?grass,edge" alt="Landscaping Photo 5">
+      <img src="https://source.unsplash.com/800x600/?fall,leaves" alt="Landscaping Photo 6">
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Barakah Landscaping</p>
+  </footer>
+
+</body>
+</html>

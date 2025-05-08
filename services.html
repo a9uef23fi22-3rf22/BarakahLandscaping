@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barakah Landscaping | Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      background: linear-gradient(135deg, #e7f0e7, #f4f8f4);
+      overflow-x: hidden;
+    }
+    header.top-bar {
+      background-color: #688346;
+      color: white;
+      padding: 1rem 2rem;
+    }
+    .top-bar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .logo img {
+      height: 40px;
+    }
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .hero {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .hero .text {
+      flex: 1;
+      padding-right: 2rem;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      color: #2E7D32;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+    .hero .quote {
+      flex: 1;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .hero .quote h2 {
+      margin-bottom: 1rem;
+      color: #2E7D32;
+    }
+    .hero .quote input, .hero .quote textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .hero .quote button {
+      background-color: #2E7D32;
+      color: white;
+      border: none;
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .hero .quote button:hover {
+      background-color: #256428;
+    }
+    footer {
+      background: #2E7D32;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+      }
+      .hero .text, .hero .quote {
+        padding: 0;
+      }
+    }
+    
+  </style>
+</head>
+<body>
+
+  <header class="top-bar">
+    <div class="container">
+      <div class="logo">
+        <img src="landscaping.png" alt="Barakah Landscaping Logo">
+        Barakah Landscaping
+      </div>
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="quote.html">Request A Quote</a>
+        <a href="services.html">Services</a>
+        <a href="service-areas.html">Service Areas</a>
+        <a href="contact-us.html">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="text">
+      <h1>Barakah Landscaping</h1>
+      <p>Transforming outdoor spaces all across Colorado with expert landscaping, lawn care, tree trimming, and more. We serve all areas in Colorado except extremely remote locations.</p>
+    </div>
+    <div class="quote">
+      <h2>Get a Free Quote</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <textarea placeholder="Tell us what you need" rows="4"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Barakah Landscaping</p>
+  </footer>
+
+</body>
+</html>

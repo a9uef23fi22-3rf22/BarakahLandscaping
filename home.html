@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barakah Landscaping</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body, html {
+    width: 100%;
+  }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f8f4;
+      color: #333;
+      width: 100vw;
+      overflow-x: hidden;
+    }
+    header.top-bar {
+      background-color: #688346;
+      color: white;
+      padding: 1rem 2rem;
+    }
+    .top-bar .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .top-bar .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact-info span {
+      display: block;
+      font-size: 0.9rem;
+    }
+    .hero {
+      background: url('https://source.unsplash.com/1600x900/?landscaping,garden') no-repeat center center/cover;
+      width: 100vw;
+      height: 100vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-align: center;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgb(156, 194, 107);
+      z-index: 1;
+    }
+    .hero .container {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 0 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    .hero h2 {
+      font-size: 1.5rem;
+    }
+    .hero p {
+      max-width: 700px;
+      margin: 1rem auto;
+      font-size: 1.1rem;
+    }
+    section {
+      padding: 4rem 2rem;
+      width: 100%;
+      max-width: none;
+      margin: 0 auto;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .quote-form h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .quote-form form {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .quote-form input, .quote-form textarea, .quote-form select {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .quote-form button {
+      background-color: #2E7D32;
+      color: white;
+      padding: 0.75rem 2rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .quote-form button:hover {
+      background-color: #256428;
+    }
+    .map-contact .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    .map iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .contact {
+      flex: 1;
+    }
+    .contact h3 {
+      margin-bottom: 1rem;
+    }
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero h2 {
+        font-size: 1.2rem;
+      }
+    }
+    .map {
+      width: 100%;
+      height: 400px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .logo img {
+      height: 40px;
+      width: auto;
+    }
+
+    .buttons-section {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 4rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      background-color: #ffffff;
+      color: rgb(37, 108, 53);
+      padding: 2rem 2rem;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.25rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 450px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-icon {
+      width: 150px;
+      height: auto;
+      margin-bottom: 1rem;
+      transition: filter 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #256428;
+      color: white;
+    }
+
+    .btn:hover .btn-icon {
+      filter: brightness(0) invert(1);
+    }
+
+    /* Animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .about-services {
+  padding: 3rem 1rem;
+  background-color: #f0f5f0;
+}
+
+.about-services .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 700px; /* Increased from 600px to 700px */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.about-text h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #2E7D32;
+}
+
+.about-text p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.carousel-section {
+    overflow: hidden;
+    padding: 2rem 0;
+    background-color: #f0f0f0;
+  }
+
+  .carousel-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .carousel-track {
+    display: flex;
+    width: calc(450px * 12); /* 6 images * 2 duplicates */
+    animation: scroll 90s linear infinite;
+  }
+
+  .carousel-track img {
+    width: 350px;
+    height: 230px;
+    object-fit: cover;
+    margin-right: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .carousel-track img {
+      width: 180px;
+      height: 130px;
+    }
+  }
+  
+  .about-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the content horizontally */
+  justify-content: center; /* Centers the content vertically */
+  text-align: center; /* Ensures text inside is centered */
+  min-height: 100vh; /* Ensures the content spans the full height of the screen */
+  padding: 2rem;
+  background-color: #f0f5f0; /* Optional: Set background color */
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #2E7D32; /* Optional: Set color */
+}
+
+.about-text p {
+  font-size: 1.2rem;
+  color: #333; /* Optional: Set color */
+  max-width: 800px; /* Optional: Set a max width to avoid the text stretching too wide */
+  margin: 0 auto; /* Centers the text horizontally */
+}
+  .about-services {
+    padding: 60px 20px;
+    background-color: #f5f5f5;
+  }
+
+  .about-services .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap;
+  }
+
+  .about-text {
+    flex: 1;
+    min-width: 300px;
+    padding-right: 30px;
+  }
+
+  .about-text h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #2e7d32;
+  }
+
+  .about-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 16px;
+  }
+
+  .about-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+  }
+
+  .about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  @media (max-width: 768px) {
+    .about-services .container {
+      flex-direction: column-reverse;
+    }
+
+    .about-text {
+      padding-right: 0;
+      margin-top: 30px;
+    }
+  }
+  </style>
+</head>
+<body>
+
+  <header class="top-bar">
+    <div class="container">
+      <div class="logo fade-in">
+        <img src="landscaping.png" alt="Barakah Landscaping Logo">
+        <span>Barakah Landscaping</span>
+      </div>
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="quote.html">Request A Quote</a>
+        <a href="services.html">Services</a>
+        <a href="service-areas.html">Service Areas</a>
+        <a href="contact-us.html">Contact Us</a>
+      </nav>
+      <div class="contact-info">
+        <span>(720) 671-7965</span>
+        <span>info@barakahlandscaping.com</span>
+      </div>
+    </div>
+  </header>
+  <section class="hero" id="home" style="height: auto; padding: 4rem 1rem;">
+    <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem;">
+      <div style="flex: 1; min-width: 300px; max-width: 500px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <img src="landscaping.png" alt="Barakah Landscaping Logo" style="height: 200px;">
+        <h1>Barakah Landscaping</h1>
+        <p style="max-width: 400px;">
+          Transforming outdoor spaces all across Colorado with expert landscaping, Clean Cut Trees, Grass Cutting / Lawn Mowing, Edging, and more. We serve all areas in Colorado except extremely remote locations.
+        </p>
+        <div style="margin-top: 2rem; font-size: 1rem; display: flex; gap: 1.5rem; justify-content: center;">
+          <p>
+            <a href="tel:+17206717965" style="display: inline-block; padding: 8px 16px; background-color: #48a34c; color: white; border-radius: 25px; text-decoration: none; font-weight: bold; transition: background-color 0.3s; border: 2px solid #439643; font-size: 0.9rem;">
+              📞 (720) 671-7965
+            </a>
+          </p>
+          <p>
+            <a href="mailto:barakahlandscaping@gmail.com" style="display: inline-block; padding: 8px 16px; background-color: #48a34c; color: white; border-radius: 25px; text-decoration: none; font-weight: bold; transition: background-color 0.3s; border: 2px solid #439643; font-size: 0.9rem;">
+              📧 barakahlandscaping@gmail.com
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <div class="quote-form" id="about" style="flex: 1; min-width: 300px; max-width: 600px;">
+        <h2 style="text-align: center;">Request A Quote</h2>
+        <form>
+          <input type="text" placeholder="Name" required>
+          <input type="email" placeholder="Email Address" required>
+          <input type="text" placeholder="Address">
+          <input type="text" placeholder="Phone Number">
+          <select required>
+            <option value="">Type Of Project</option>
+            <option value="Clean Cut Trees">Clean Cut Trees</option>
+            <option value="Grass Cutting / Lawn Mowing">Grass Cutting / Lawn Mowing</option>
+            <option value="Edging">Edging</option>
+            <option value="Weed Removal">Weed Removal</option>
+            <option value="Lawn Cleaning / Sweeping">Lawn Cleaning / Sweeping</option>
+            <option value="Leaf Raking / Collection">Leaf Raking / Collection</option>
+            <option value="General Garden Clean-Up">General Garden Clean-Up</option>
+          </select>
+          <select required>
+            <option value="">Select Your Budget</option>
+            <option value="<$500">&lt; $500</option>
+            <option value="$500-$2000">$500 - $2000</option>
+            <option value=">$2000">&gt; $2000</option>
+          </select>
+          <input type="date" required>
+          <textarea placeholder="Tell us about your project..."></textarea>
+          <input type="file">
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <section class="buttons-section">
+    <button class="btn" onclick="window.location.href='blog.html'">
+      <img src="blog.png" alt="Blog Icon" class="btn-icon"> Blog
+    </button>
+    <button class="btn" onclick="window.location.href='gallery.html'">
+      <img src="gallery.png" alt="Gallery Icon" class="btn-icon"> Gallery
+    </button>
+  </section>
+  <section class="about-services">
+    <div class="container">
+      <div class="about-image">
+        <img src="gallery1.png" alt="Lawn with Fence" />
+      </div>
+      <div class="about-text">
+        <h2>Your Trusted Landscaping Experts in Aurora, CO</h2>
+        <p>
+          At Barakah Landscaping, we believe your yard is more than just grass and soil—it's a space for beauty, relaxation, and pride. We offer professional landscaping services in Aurora, CO that transform your lawn and garden into a clean, polished, and inviting space.
+        </p>
+        <p>
+          From expert grass cutting and edging to precise tree trimming and seasonal leaf removal, we take care of every detail. Our team is committed to giving you reliable, affordable, and high-quality service that keeps your outdoor space looking its best all year long.
+        </p>
+        <p>
+          Ready to upgrade your yard? Contact Barakah Landscaping today and let’s make your lawn shine.
+          <!-- Phone number button below paragraph -->
+          <div style="margin-top: 1.5rem;">
+            <a href="tel:+17206717965" style="display: inline-block; padding: 10px 20px; background-color: #48a34c; color: white; border-radius: 25px; text-decoration: none; font-weight: bold; transition: background-color 0.3s; border: 2px solid #439643; font-size: 1rem;">
+              📞 (720) 671-7965
+            </a>
+          </div>
+        </p>
+      </div>
+    </div>
+  </section>
+  <div class="about-text">
+    <h2>A Portfolio of Excellence in Aurora, CO</h2>
+    <p>
+      At Barakah Landscaping, we are passionate about transforming outdoor spaces in Aurora, CO. Every project we undertake reflects our commitment to quality and craftsmanship, turning your yard into the perfect landscape you've always dreamed of. Our portfolio is not just a collection of work; it's a testament to our dedication to excellence, creativity, and customer satisfaction.
+    </p>
+    <p>
+      Browse our gallery to see the skill and precision we put into each project—from detailed lawn care to beautiful garden designs. Every project is a reflection of our ability to create unique, functional, and stunning outdoor spaces. Let our work inspire your next landscaping project with Barakah Landscaping.
+    </p>
+ 
+  <!-- ✅ AUTO-LOOPING CAROUSEL SECTION -->
+<section class="carousel-section">
+  <div class="carousel-wrapper">
+    <div class="carousel-track">
+      <img src="Area1.jpeg" alt="Gallery Image 1">
+      <img src="Area2.jpeg" alt="Gallery Image 2">
+      <img src="Area3.jpeg" alt="Gallery Image 3">
+      <img src="Area4.jpeg" alt="Gallery Image 4">
+      <img src="Area5.jpeg" alt="Gallery Image 5">
+      <img src="Area6.jpeg" alt="Gallery Image 6">
+      <img src="Area7.jpeg" alt="Gallery Image 7">
+      <img src="Area8.jpeg" alt="Gallery Image 8">
+      <img src="Area9.jpeg" alt="Gallery Image 9">
+      <img src="Area10.jpeg" alt="Gallery Image 10">
+      <img src="Area11.jpeg" alt="Gallery Image 11">
+      <!-- Duplicate the images for infinite loop effect -->
+      <img src="Area1.jpeg" alt="Gallery Image 1">
+      <img src="Area2.jpeg" alt="Gallery Image 2">
+      <img src="Area3.jpeg" alt="Gallery Image 3">
+      <img src="Area4.jpeg" alt="Gallery Image 4">
+      <img src="Area5.jpeg" alt="Gallery Image 5">
+      <img src="Area6.jpeg" alt="Gallery Image 6">
+      <img src="Area7.jpeg" alt="Gallery Image 7">
+      <img src="Area8.jpeg" alt="Gallery Image 8">
+      <img src="Area9.jpeg" alt="Gallery Image 9">
+      <img src="Area10.jpeg" alt="Gallery Image 10">
+      <img src="Area11.jpeg" alt="Gallery Image 11">
+    </div>
+  </div>
+</section>
+
+<section class="about-services">
+  <div class="container">
+    <!-- LEFT: TEXT -->
+    <div class="about-text">
+      <h2>Your Trusted Landscaping Experts in Aurora, CO</h2>
+      <p>
+        At Barakah Landscaping, we believe your yard is more than just grass and soil—it's a space for beauty, relaxation, and pride. We offer professional landscaping services in Aurora, CO that transform your lawn and garden into a clean, polished, and inviting space.
+      </p>
+      <p>
+        From expert grass cutting and edging to precise tree trimming and seasonal leaf removal, we take care of every detail. Our team is committed to giving you reliable, affordable, and high-quality service that keeps your outdoor space looking its best all year long.
+      </p>
+      <p>
+        Ready to upgrade your yard? Contact Barakah Landscaping today and let’s make your lawn shine.
+      </p>
+      <div style="margin-top: 1.5rem;">
+        <a href="mailto:barakahlandscaping@gmail.com" style="display: inline-block; padding: 10px 20px; background-color: #48a34c; color: white; border-radius: 25px; text-decoration: none; font-weight: bold; transition: background-color 0.3s; border: 2px solid #439643; font-size: 1rem;">
+          📧 barakahlandscaping@gmail.com
+        </a>
+      </div>
+    </div>
+
+    <!-- RIGHT: IMAGE -->
+    <div class="about-image">
+      <img src="gallery1.png" alt="Lawn with Fence" />
+    </div>
+  </div>
+</section>
+
+  <section class="about-services" style="background-color: transparent; padding: 2rem 0; display: flex; justify-content: center; align-items: center; height: 75vh; width: 100%; margin: 0; border: 5px solid #badd7549;">
+  <!-- Content inside the section -->
+  <div class="content" style="text-align: center;">
+    <h2>Your Trusted Landscaping Experts in Aurora, CO</h2>
+    <p>
+      At Barakah Landscaping, we believe your yard is more than just grass and soil—it's a space for beauty, relaxation, and pride. We offer professional landscaping services in Aurora, CO that transform your lawn and garden into a clean, polished, and inviting space.
+    </p>
+    <p>
+      With years of experience and a reputation for excellence in Aurora landscaping, Barakah Landscaping stands as your trusted partner for all landscaping needs. Our commitment to providing top-notch landscaping and lawn care services ensures that your residential outdoor spaces are not just maintained, but meticulously crafted to reflect the highest standards of quality and beauty. Choose us as your landscaper to bring a new level of sophistication to your property.
+    </p>
+  </div>
+</section>
+
+<section class="blog-section" style="background-color: #f4f4f4; padding: 4rem 2rem;">
+  <div style="text-align: center; margin-bottom: 3rem;">
+    <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Our Blog Posts</h2>
+    <p style="max-width: 700px; font-size: 1.2rem; margin: 0 auto;">
+      Hey there! Feeling stuck on how to spruce up your yard? We totally get it.
+      That’s why we created this blog! Here you’ll find tons of landscaping tips,
+      from design inspiration to the latest trends, all written by folks who are
+      just as passionate about outdoor spaces as you are. Let’s brainstorm some ideas together!
+    </p>
+  </div>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 3rem; justify-content: center; margin-bottom: 3rem;">
+    <!-- Blog Card 1 -->
+    <a href="blog1.html" style="text-decoration: none; color: inherit;">
+      <div style="width: 380px; height: 580px; border-radius: 30px; background: rgb(132, 184, 68); box-shadow: 0 6px 20px rgba(0,0,0,0.2); overflow: hidden; transition: transform 0.3s;">
+        <img src="Area3.jpeg" alt="Blog 1" style="width: 100%; height: 300px; object-fit: cover;" />
+        <div style="padding: 2rem;">
+          <h3 style="margin-top: 0; font-size: 1.8rem;">Top 5 Landscaping Ideas</h3>
+          <p style="font-size: 1.2rem;">Transform your yard with these fresh, easy landscaping upgrades.</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- Blog Card 2 -->
+    <a href="blog2.html" style="text-decoration: none; color: inherit;">
+      <div style="width: 380px; height: 580px; border-radius: 30px; background: rgb(132, 184, 68); box-shadow: 0 6px 20px rgba(0,0,0,0.2); overflow: hidden;">
+        <img src="Area10.jpeg" alt="Blog 2" style="width: 100%; height: 300px; object-fit: cover;" />
+        <div style="padding: 2rem;">
+          <h3 style="margin-top: 0; font-size: 1.8rem;">Lawn Maintenance Tips</h3>
+          <p style="font-size: 1.2rem;">Keep your grass healthy and green year-round with these simple tricks.</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- Blog Card 3 -->
+    <a href="blog3.html" style="text-decoration: none; color: inherit;">
+      <div style="width: 380px; height: 580px; border-radius: 30px; background: rgb(132, 184, 68); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); overflow: hidden;">
+        <img src="Area1.jpeg" alt="Blog 3" style="width: 100%; height: 300px; object-fit: cover;" />
+        <div style="padding: 2rem;">
+          <h3 style="margin-top: 0; font-size: 1.8rem;">DIY Garden Decor</h3>
+          <p style="font-size: 1.2rem;">Creative outdoor decor you can do yourself to personalize your yard.</p>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- Large Button -->
+  <div style="text-align: center;">
+    <a href="blog.html" style="display: inline-block; padding: 20px 50px; background-color: #2e7d32; color: white; border-radius: 40px; text-decoration: none; font-weight: bold; font-size: 1.4rem; border: 3px solid #256429; transition: background-color 0.3s;">
+      More Blog Posts
+    </a>
+  </div>
+</section>
+
+
+<style>
+  /* Add hover effect for clickable blog boxes */
+  .blog-box:hover {
+    transform: translateY(-10px);
+  }
+
+  /* Ensure responsiveness on smaller screens */
+  @media (max-width: 768px) {
+    .blog-grid {
+      justify-content: center;
+    }
+
+    .blog-box {
+      width: 100%;
+    }
+  }
+</style>
+
+  <footer>
+    <div class="container" style="text-align: right; padding: 2rem;">
+      <h2 style="font-size: 2rem; margin-bottom: 1rem;">Contact Us</h2>
+      <p style="font-size: 1.2rem;">Have questions? We’re here to help!</p>
+      <p style="font-size: 1.2rem;">📞 (720) 671-7965</p>
+      <p style="font-size: 1.2rem;">📧
+    <p style="color: rgb(0, 0, 0);">&copy; 2025 Barakah Landscaping. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
